@@ -80,7 +80,8 @@
             display: none;
         }
         .survey-button {
-            margin-top: 20px;
+            display: inline-block;
+            margin-top: 30px;
             padding: 10px 20px;
             font-size: 1.2em;
             border: none;
@@ -108,9 +109,10 @@
             <button onclick="confirmMedication('服薬')">服薬</button>
         </div>
         <div id="confirmation-message">服薬確認しました</div>
-        <!-- アンケートへのリンクボタン -->
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSeslJsMnOr8zd2wikJRDOV9iaKjjVQyCffybaV44YNXuWJ9iw/viewform" target="_blank" class="survey-button">アンケートに回答する</a>
     </div>
+
+    <!-- アンケートへのリンクボタン -->
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSeslJsMnOr8zd2wikJRDOV9iaKjjVQyCffybaV44YNXuWJ9iw/viewform" target="_blank" class="survey-button">アンケートに回答する</a>
 
     <script>
         function updateDateTime() {
