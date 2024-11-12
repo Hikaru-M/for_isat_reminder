@@ -130,7 +130,7 @@
                            (hours >= 12 && hours < 18) ? 'Afternoon' : 'Evening';
 
             document.querySelector('.header').textContent = `${month} ${day}, ${dayOfWeek}`;
-            document.querySelector('.time').textContent = `${period} - ${hours}:${minutes} Medication Reminder`;
+            document.querySelector('.time').textContent = `${period}-${hours}:${minutes}  Medication`;
         }
         
         window.onload = updateDateTime;
