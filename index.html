@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>服薬確認ページ</title>
+    <title>Medication Confirmation Page</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -98,27 +98,27 @@
     <div class="container">
         <div class="header"></div>
         <div class="time"></div>
-        <!-- 自己鏡映像 -->
+        <!-- Self-Mirror Video -->
         <video id="cameraStream" autoplay playsinline></video>
         <div class="medication-info">
-            <img src="https://github.com/Hikaru-M/medication-reminder/blob/main/capsule-1.jpg?raw=true" alt="薬の画像">
-            <div class="medication-dosage">処方薬 1錠</div>
+            <img src="https://github.com/Hikaru-M/medication-reminder/blob/main/capsule-1.jpg?raw=true" alt="Medication Image">
+            <div class="medication-dosage">1 Tablet</div>
         </div>
         <div class="buttons">
-            <button onclick="confirmMedication('スキップ')">スキップ</button>
-            <button onclick="confirmMedication('服薬')">服薬</button>
+            <button onclick="confirmMedication('Skip')">Skip</button>
+            <button onclick="confirmMedication('Take Medication')">Take Medication</button>
         </div>
-        <div id="confirmation-message">服薬確認しました</div>
+        <div id="confirmation-message">Medication confirmed</div>
     </div>
 
-    <!-- アンケートへのリンクボタン -->
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLSeslJsMnOr8zd2wikJRDOV9iaKjjVQyCffybaV44YNXuWJ9iw/viewform" target="_blank" class="survey-button">アンケートに回答する</a>
+    <!-- Survey Button -->
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSeslJsMnOr8zd2wikJRDOV9iaKjjVQyCffybaV44YNXuWJ9iw/viewform" target="_blank" class="survey-button">Answer Survey</a>
 
     <script>
         function updateDateTime() {
             const now = new Date();
-            const weekdays = ['日曜日', '月曜日', '火曜日', '水曜日', '木曜日', '金曜日', '土曜日'];
-            const months = ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月'];
+            const weekdays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+            const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 
             const dayOfWeek = weekdays[now.getDay()];
             const day = now.getDate();
@@ -126,11 +126,11 @@
 
             let hours = now.getHours();
             const minutes = now.getMinutes().toString().padStart(2, '0');
-            const period = (hours >= 5 && hours < 12) ? '朝' :
-                           (hours >= 12 && hours < 18) ? '昼' : '夜';
+            const period = (hours >= 5 && hours < 12) ? 'Morning' :
+                           (hours >= 12 && hours < 18) ? 'Afternoon' : 'Evening';
 
-            document.querySelector('.header').textContent = `${month} ${day}日 ${dayOfWeek}`;
-            document.querySelector('.time').textContent = `${period}：${hours}:${minutes} の服薬`;
+            document.querySelector('.header').textContent = `${month} ${day}, ${dayOfWeek}`;
+            document.querySelector('.time').textContent = `${period} - ${hours}:${minutes} Medication Reminder`;
         }
         
         window.onload = updateDateTime;
@@ -144,13 +144,14 @@
                     video.play();
                 })
                 .catch(function(error) {
-                    console.error("カメラのアクセスに失敗しました: ", error);
+                    console.error("Failed to access the camera: ", error);
                 });
         } else {
-            console.error("このブラウザはカメラをサポートしていません。");
+            console.error("This browser does not support camera access.");
         }
 
         function confirmMedication(action) {
+            document.getElementById('confirmation-message').textContent = `${action} confirmed`;
             document.getElementById('confirmation-message').style.display = 'block';
         }
     </script>
