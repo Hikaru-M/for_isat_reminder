@@ -79,6 +79,18 @@
             margin-top: 12px;
             display: none;
         }
+        .survey-button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            font-weight: bold;
+            text-decoration: none;
+        }
     </style>
 </head>
 <body>
@@ -96,6 +108,8 @@
             <button onclick="confirmMedication('服薬')">服薬</button>
         </div>
         <div id="confirmation-message">服薬確認しました</div>
+        <!-- アンケートへのリンクボタン -->
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSeslJsMnOr8zd2wikJRDOV9iaKjjVQyCffybaV44YNXuWJ9iw/viewform" target="_blank" class="survey-button">アンケートに回答する</a>
     </div>
 
     <script>
