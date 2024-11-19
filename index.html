@@ -101,13 +101,17 @@
         .arrow-down {
             font-size: 2em;
             color: #4CAF50;
-            margin-bottom: -10px;
+            position: absolute;
+            top: -30px;
+            left: 50%;
+            transform: translateX(-50%);
         }
-        .arrow-container {
+        .button-container {
             position: relative;
-            margin-bottom: -20px;
             display: flex;
             justify-content: center;
+            gap: 20px;
+            margin-top: 40px;
         }
     </style>
 </head>
@@ -133,12 +137,10 @@
         Click below to compare with a standard reminder.
     </p>
 
-    <!-- Arrow and Standard Reminder Buttons -->
-    <div class="arrow-container">
-        <div class="arrow-down">⬇</div>
-    </div>
-    <div style="display: flex; justify-content: center; gap: 20px; margin-top: 10px;">
+    <!-- Survey and Standard Reminder Buttons with Arrow -->
+    <div class="button-container">
         <a href="https://docs.google.com/forms/d/e/1FAIpQLSfRaP-UnSUzxd_nAfVQVpr-lEYLswcZKTOID2b_D_6MF-Sq7g/viewform?usp=sf_link" target="_blank" class="survey-button red">Take Survey</a>
+        <div class="arrow-down">⬇</div>
         <a href="https://hikaru-m.github.io/for_isat_standard_reminder/" target="_blank" class="survey-button green">Standard Reminder</a>
     </div>
 
